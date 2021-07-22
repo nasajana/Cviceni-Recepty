@@ -1,16 +1,20 @@
-        /* nejsme vcerejsi, pouzivame moderni box model */
-        
-        html {
-            box-sizing: border-box;
-        }
-        
-        *,
-         :after,
-         :before {
-            box-sizing: inherit;
-        }
-        /* -------------------------------------------------- */
-        /*
+/* nejsme vcerejsi, pouzivame moderni box model */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+ :after,
+ :before {
+    box-sizing: inherit;
+}
+
+
+/* -------------------------------------------------- */
+
+
+/*
                 pouzivame mobile first pristup
                 tj. vychozi styly mimo media query jsou pro nejmensi mobilni zarizeni (telefony)
                 s pribyvajici sirkou pridavame media query pro...
@@ -21,73 +25,163 @@
                 @media (min-width: 860px) {
                 }
                 */
-        
-        body {
-            margin: 0;
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-        
-        .paticka {
-            text-align: center;
-            font-size: 14px;
-            color: silver;
-        }
-        
-        .paticka a {
-            color: silver;
-        }
-        /* ------------------------------- */
-        /* ----- DOLE BUDE TVOJE CSS ----- */
-        /* ------------------------------- */
-        
-        .doporucujeme {
-            color: white;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: flex;
-        }
-        
-        h1,
-        h2 {
-            margin: 0;
-        }
-        
-        .hlavni-recept,
-        .recept {
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            padding: 10px;
-        }
-        
-        .recept-nazev {
-            font-size: 28px;
-            font-family: 'Raleway', sans-serif;
-        }
-        
-        .recept {
-            /*display: flex;
-            toto mi udělá že budou položky vedle sebe*/
-            min-height: 90px;
-        }
-        
-        .hlavni-recept {
-            background-image: url(images/burger.jpg);
-            min-height: 200px;
-        }
-        
-        .recept2 {
-            background-image: url(images/sushi.jpg);
-        }
-        
-        .recept3 {
-            background-image: url(images/rajcata.jpg);
-        }
-        
-        .recept4 {
-            background-image: url(images/kure.jpg);
-        }
-        
-        .recept5 {
-            background-image: url(images/grilovani.jpg);
-        }
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.paticka {
+    text-align: center;
+    font-size: 14px;
+    color: silver;
+}
+
+.paticka a {
+    color: silver;
+}
+
+
+/* ------------------------------- */
+
+
+/* ----- DOLE BUDE TVOJE CSS ----- */
+
+
+/* ------------------------------- */
+
+.doporucujeme {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: flex;
+}
+
+h1,
+h2 {
+    margin: 0;
+}
+
+.hlavni-recept,
+.recept {
+    background-size: cover;
+    background-position: center center;
+    padding: 10px;
+    border: 1px solid white;
+}
+
+.hlavni-recept .recept-nazev {
+    font-size: 28px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.recept-nazev {
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.hlavni-recept {
+    background-image: url(images/burger.jpg);
+    min-height: 200px;
+}
+
+.recept {
+    /*display: flex;
+                     toto mi udělá že budou položky vedle sebe*/
+    min-height: 90px;
+}
+
+.recept2 {
+    background-image: url(images/sushi.jpg);
+}
+
+.recept3 {
+    background-image: url(images/rajcata.jpg);
+}
+
+.recept4 {
+    background-image: url(images/kure.jpg);
+}
+
+.recept5 {
+    background-image: url(images/grilovani.jpg);
+}
+
+.recept-meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hlavni-recept,
+.recept {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/*doporučuje nastudovat ještě object-fit v práci s pozadím
+*/
+
+@media (min-width: 480px) {
+    .recepty {
+        display: flex;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .hlavni-recept,
+    .recept {
+        padding: 20px;
+    }
+    .hlavni-recept .recept-nazev {
+        font-size: 36px;
+        font-family: 'Raleway', sans-serif;
+    }
+    .recept-nazev {
+        font-size: 22px;
+        font-family: 'Raleway', sans-serif;
+    }
+    .hlavni-recept {
+        min-height: 250px;
+    }
+    .recept {
+        /*display: flex;
+                toto mi udělá že budou položky vedle sebe*/
+        min-height: 150px;
+        width: 50%;
+    }
+}
+
+@media (min-width: 860px) {
+    .doporucujeme {
+        flex-direction: row;
+    }
+    .recepty {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .hlavni-recept,
+    .recept {
+        padding: 20px;
+    }
+    .hlavni-recept .recept-nazev {
+        font-size: 48px;
+        font-family: 'Raleway', sans-serif;
+    }
+    .recept-nazev {
+        font-size: 28px;
+        font-family: 'Raleway', sans-serif;
+    }
+    .hlavni-recept {
+        min-height: 400px;
+        width: 100%;
+    }
+    .recept {
+        /*display: flex;
+                toto mi udělá že budou položky vedle sebe*/
+        min-height: 200px;
+        width: 50%;
+    }
+}
